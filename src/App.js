@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route } from 'react-router-dom';
+import { BrowserRouter,Switch, Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
@@ -10,10 +10,10 @@ import Default from './components/Default';
 
 function App() {
   return (
-    <React.Fragment>
+    <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route exa ct path="/"  component={ProductList} />
+          <Route exact path="/"  component={ProductList} />
           <Route path="/details"  component={Details} />
           <Route path="/store"  component={Card} />
           <Route component={Default} />
@@ -22,7 +22,7 @@ function App() {
         <Details/>
         <Card/>
         <Default/>
-    </React.Fragment>
+    </BrowserRouter>
     
   );
 }
